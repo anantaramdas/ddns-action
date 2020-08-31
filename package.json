@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "eslint index.js && jest",
-    "lint": "eslint *.js"
+    "lint": "eslint --max-warnings 0 **/*.js",
+    "prune-prod": "npm prune --production",
+    "release": "release-it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aquiladev/ddns-action.git"
   },
   "keywords": [
     "ENS",
@@ -17,15 +23,20 @@
   ],
   "author": "Sergii Bomko <aquila.ua@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aquiladev/ddns-action/issues"
+  },
+  "homepage": "https://github.com/aquiladev/ddns-action#readme",
   "dependencies": {
     "@actions/core": "1.2.2",
     "@actions/github": "2.1.1",
     "@triplespeeder/ens-updater": "1.9.0",
-    "@truffle/hdwallet-provider": "1.0.31"
+    "@truffle/hdwallet-provider": "1.0.42"
   },
   "devDependencies": {
     "eslint": "6.8.0",
-    "jest": "25.1.0"
+    "jest": "25.1.0",
+    "release-it": "13.6.8"
   },
   "eslintIgnore": [
     "*.test.js"
